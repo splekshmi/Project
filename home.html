@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Employee tenure prediction</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body background="/static/images/image1.jpg">
+<!-- Input Form -->
+
+  <center>
+  
+        <h1>Employee Tenure Prediction</h1>
+        <hr>
+        <form class="form-inline" method="POST" action="{{ url_for('predict') }}">
+        <label style="font-size:20px;" for="t_Age"> Age:</label>
+           <div class="form-group">
+             <div class="input-group">
+                 <select name="t_Age" method="GET" action="/">
+                         {% for i in data['ageEstimate'].unique() %}
+                         <option value="{{ i }}">{{ i }} </option>
+                    {% endfor %}
+                 </select>
+                 <br>
+                 <br>
+         <label style="font-size:20px;" for="t_Gender">Gender:</label>
+            <div class="form-group">
+              <div class="input-group">
+                  <select name="t_Gender" method="GET" action="/">
+                          {% for i in data['genderEstimate'].unique() %}
+                          <option value="{{ i }}">{{ i }} </option>
+                     {% endfor %}
+                  </select>
+                  <br>
+                  <br>
+        <label style="font-size:20px;" for="t_mbrLocation">Home Location:</label>
+           <div class="form-group">
+             <div class="input-group">
+                 <select name="t_mbrLocation" method="GET" action="/">
+                         {% for i in data['mbrLocation'].unique()|sort %}
+                         <option value="{{ i }}">{{ i }} </option>
+                    {% endfor %}
+                 </select>
+                 <br>
+                 <br>
+        <label style="font-size:20px;" for="t_Company">Company Name:</label>
+           <div class="form-group">
+             <div class="input-group">
+                 <select name="t_Company" method="GET" action="/">
+                         {% for i in data['companyName'].unique()|sort %}
+                         <option value="{{ i }}">{{ i }} </option>
+                    {% endfor %}
+                 </select>
+                 <br>
+                 <br>
+        <label style="font-size:20px;" for="t_companyStaffCount">Company Staff Count:</label>
+           <div class="form-group">
+             <div class="input-group">
+                 <select name="t_companyStaffCount" method="GET" action="/">
+                         {% for i in data['companyStaffCount'].unique()|sort %}
+                         <option value="{{ i }}">{{ i }} </option>
+                    {% endfor %}
+                 </select>
+                 <br>
+                 <br>
+         <label style="font-size:20px;" for="t_posTitle">Job Role:</label>
+            <div class="form-group">
+              <div class="input-group">
+                  <select name="t_posTitle" method="GET" action="/">
+                          {% for i in data['posTitle'].unique()|sort %}
+                          <option value="{{ i }}">{{ i }} </option>
+                     {% endfor %}
+                  </select>
+                  <br>
+                  <br>
+         <label style="font-size:20px;"style="font-size:20px;" for="t_posLocation">Company Location:</label>
+            <div class="form-group">
+              <div class="input-group">
+                  <select name="t_posLocation" method="GET" action="/">
+                          {% for i in data['posLocation'].unique()|sort %}
+                          <option value="{{ i }}">{{ i }} </option>
+                     {% endfor %}
+                  </select>
+                 <br>
+                 <br>
+                 <br>
+              </div>
+              <button id="submit" type="submit" class="btn btn-default">Go</button>
+            </div>
+          </form>
+</body>
+</html>
+
