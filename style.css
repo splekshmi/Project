@@ -1,0 +1,17 @@
+
+#submit{
+    border:2px;
+    background-color: darkgreen;
+    color: white ;
+    font-size: 20px;
+    border-radius:4px;
+    width:100px;
+    height:25px;
+}
+#submit:hover{
+    background-color:lightsalmon;
+    transition: .5s ease-in-out;
+    color:black;
+}
+
+  
